@@ -18,12 +18,15 @@ function App() {
 
   const tableHeaders = ["Starship Name", "Manufacturer", "Cost (Credits)", "Hyperdrive Rating", "Passengers"]
 
+  const manufacturerOptions = ["Corellian Engineering Corporation", "Cyngus Spaceworks", "Fondor Shipyards", "Gallofree Yards, Inc.", "Imperial Department of Military Research", "Incom Corporation", "Koensayr Manufacturing", "Kuat Drive Yards", "Sienar Fleet Systems"]
+
   return (
     <div className="App">
         <h1>Please Pick a Manufacturer:</h1>
         <select onChange={(event) => setManufacturer(event.target.value)} value={manufacturer}>
           <option key="All" value="All">Show All Starships</option>  
-          {data.length === 0 ? <option>LOADING...</option> : data.map( (option, index) => <option key={index} value={option.manufacturer}>{option.manufacturer}</option>)}
+          {manufacturerOptions.map( (option, index) => <option key={index} value={option}>{option}</option>)}
+          {/* {data.length === 0 ? <option>LOADING...</option> : data.map( (option, index) => <option key={index} value={option.manufacturer}>{option.manufacturer}</option>)} */}
         </select>
         <table>
           <tbody>
