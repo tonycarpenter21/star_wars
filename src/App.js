@@ -16,8 +16,6 @@ function App() {
     return manufacturer === "All" ? data : data.filter(item => item.manufacturer.includes(selectedManufacturer))
   }
 
-  console.log(filteredShips(data, manufacturer))
-
   const tableHeaders = ["Starship Name", "Manufacturer", "Cost (Credits)", "Hyperdrive Rating", "Passengers"]
 
   return (
